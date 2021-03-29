@@ -1,1 +1,10 @@
-<lib-google-maps-angular (markerClicked)="handleEvent($event)" [markers]="markers" [latLong]="latLong" [apiKey]="'AIzaSyCkrPVSxUnikEhtleFfmDhAdM92Sb5XSg8'"></lib-google-maps-angular>
+<agm-map [latitude]="latLong.lat" [longitude]="latLong.lng">
+  <ng-container *ngFor="let marker of markers">
+    <agm-marker [latitude]="marker.lat" [longitude]="marker.long"
+    [label]="marker.labelDetails.text">
+      <agm-info-window>
+        <strong>{{marker.labelDetails.text}}</strong>
+      </agm-info-window>
+    </agm-marker>
+  </ng-container>
+</agm-map>

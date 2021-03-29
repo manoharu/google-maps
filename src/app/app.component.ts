@@ -1,30 +1,24 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'google-maps';
   latLong: any;
   markers: any[];
+  locationDetails: any;
 
-  constructor() {
+  center: any;
+  constructor(
+
+  ) {
     this.latLong = {
-      lat: 17.45093217540921,
-      long: 78.38088799378392
+      lat: 17.450,
+      lng: 78.380
     };
-    this.markers = [{
-      lat: 17.43505509617847,
-      long: 78.3867159858625,
-      labelDetails: {
-        text: "Inorbit Mall",
-        fontWeight: "normal",
-        fontSize: "14px",
-        color: "white"
-      }
-    }, {
+    this.markers = [ {
       lat: 17.48451091733678,
       long: 78.38884818215061,
       type: "Sujana Forum Mall",
@@ -55,7 +49,4 @@ export class AppComponent {
     }];
   }
 
-  handleEvent(event: any) {
-    console.log(event);
-  }
 }

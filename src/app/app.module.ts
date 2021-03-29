@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleMapsAngularModule } from 'google-maps-angular';
 import { AppComponent } from './app.component';
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -9,7 +10,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    GoogleMapsAngularModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCkrPVSxUnikEhtleFfmDhAdM92Sb5XSg8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
